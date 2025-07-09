@@ -18,13 +18,15 @@
         }
       ],
       "expo-router",
-      "expo-font"
+      "expo-font",
+      "expo-video"
     ],
     "android": {
       "edgeToEdgeEnabled": true,
       "splash": {
         "image": "./assets/images/splash.png"
-      }
+      },
+      "package": "com.moqas.MyTVProject"
     },
     "ios": {
       "splash": {

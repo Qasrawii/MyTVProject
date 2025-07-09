@@ -8,12 +8,10 @@ import {
   ReanimatedLogLevel,
 } from 'react-native-reanimated';
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { useColorScheme } from '@/src/hooks/useColorScheme';
 
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
-// Disable reanimated warnings
 configureReanimatedLogger({
   level: ReanimatedLogLevel.warn,
   strict: false,
@@ -22,7 +20,7 @@ configureReanimatedLogger({
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    SpaceMono: require('../src/assets/fonts/SpaceMono-Regular.ttf'),
   });
 
   useEffect(() => {
@@ -40,9 +38,18 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen
+          name="index"
+          options={{
+            title: 'Home',
+          }}
+        />
+
       </Stack>
     </ThemeProvider>
   );

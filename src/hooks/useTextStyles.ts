@@ -1,4 +1,4 @@
-import { textStyles } from '@/constants/TextStyles';
+import { textStyles } from '@/src/constants/TextStyles';
 import { useThemeColor } from './useThemeColor';
 import { useScale } from './useScale';
 
