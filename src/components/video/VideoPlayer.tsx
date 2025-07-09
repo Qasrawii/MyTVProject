@@ -175,7 +175,7 @@ export function VideoPlayer({ video, onClose, onError }: VideoPlayerProps) {
                         {playbackState.error}
                     </ThemedText>
                     <ThemedText style={[textStyles.caption, styles.debugInfo]}>
-                        Video ID: {video.id} | Source: {Platform.isTV ? 'HLS' : 'MP4'}
+                        Video ID: {video.id} | Source: {'HLS'}
                     </ThemedText>
                     <View style={styles.errorButtons}>
                         <Pressable style={({ pressed, focused }) => [

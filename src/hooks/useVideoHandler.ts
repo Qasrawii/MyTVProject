@@ -1,5 +1,4 @@
 import { useCallback, useRef, useEffect } from "react";
-import { Platform } from "react-native";
 import { useVideoPlayer } from "expo-video";
 import { usePlaybackState } from "./usePlaybackState";
 
@@ -40,7 +39,7 @@ export function useVideoHandler({
   }, [url, hlsUrl, videoId, updatePlaybackState]);
 
   // Create video player instance with proper error handling
-  const videoSource = Platform.isTV ? hlsUrl : url;
+  const videoSource = hlsUrl;
   const player = useVideoPlayer(videoSource, (player) => {
     try {
       // Player configuration

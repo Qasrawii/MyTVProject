@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useRef, useEffect } from 'react';
-import { StyleSheet, FlatList, View, Platform, Dimensions, Pressable, Image, Animated } from 'react-native';
+import { StyleSheet, FlatList, View, Dimensions, Pressable, Image, Animated } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ThemedText } from '@/src/components/ThemedText';
 import { ThemedView } from '@/src/components/ThemedView';
@@ -253,12 +253,12 @@ export default function HomeScreen() {
               )}
               horizontal
               showsHorizontalScrollIndicator={false}
-              removeClippedSubviews={Platform.isTV ? false : true}
-              decelerationRate={Platform.isTV ? 0.85 : 'fast'}
+              removeClippedSubviews={false}
+              decelerationRate={0.85}
               scrollEventThrottle={16}
-              initialNumToRender={Platform.isTV ? 8 : 6}
-              maxToRenderPerBatch={Platform.isTV ? 4 : 8}
-              windowSize={Platform.isTV ? 5 : 10}
+              initialNumToRender={8}
+              maxToRenderPerBatch={4}
+              windowSize={5}
               getItemLayout={(data, index) => ({
                 length: 230 * scale,
                 offset: 230 * scale * index,
