@@ -178,14 +178,14 @@ export default function HomeScreen() {
 
       {heroVideo && (
         <Animated.View style={[styles.heroContainer, { opacity: heroContentFade }]}>
-          <View style={styles.topHeader}>
+          <View style={[styles.topHeader, { paddingHorizontal: 32 * scale }]}>
             <ThemedText style={[textStyles.largeTitle, styles.logoText]}>
               {heroVideo.title.toUpperCase()}
             </ThemedText>
 
           </View>
 
-          <View style={styles.heroContent}>
+          <View style={[styles.heroContent, { paddingHorizontal: 32 * scale }]}>
 
             <View style={styles.movieDescription}>
               <ThemedText numberOfLines={3} style={styles.descriptionText}>
@@ -235,13 +235,14 @@ export default function HomeScreen() {
           </View>
 
           <View  >
-            <View style={styles.sectionHeader}>
+            <View style={[styles.sectionHeader,{ paddingHorizontal: 32 * scale }]}>
               <ThemedText style={styles.sectionTitle}>New</ThemedText>
             </View>
             <FlatList<Video>
               ref={flatListRef}
               data={thumbnailVideos}
               keyExtractor={(item) => item.id}
+              contentContainerStyle={{ paddingHorizontal: 32 * scale }}
               renderItem={({ item, index }) => (
                 <VideoThumbnail
                   video={item}
@@ -334,7 +335,6 @@ const useHomeScreenStyles = function () {
     heroContainer: {
       flex: 1,
       zIndex: 2,
-      padding: 32 * scale,
       paddingTop: 24 * scale,
       justifyContent: 'space-between',
     },
@@ -347,6 +347,7 @@ const useHomeScreenStyles = function () {
     logoText: {
       fontSize: 32 * scale,
       fontWeight: 'bold',
+      lineHeight: 40 * scale,
       color: Colors[colorScheme ?? 'light'].primary,
       letterSpacing: 2,
       textShadowColor: 'rgba(0, 0, 0, 0.8)',
@@ -484,6 +485,7 @@ const useHomeScreenStyles = function () {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
+      
     },
     loadingContainer: {
       alignItems: 'center',

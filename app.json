@@ -1,6 +1,7 @@
 {
   "expo": {
     "scheme": "routertv",
+    "platforms": ["ios", "android", "web"],
     "plugins": [
       [
         "@react-native-tvos/config-tv",
@@ -24,19 +25,13 @@
     "android": {
       "edgeToEdgeEnabled": true,
       "splash": {
-        "image": "./src/src/assets/images/splash.png"
+        "image": "./src/assets/images/splash.png"
       },
       "package": "com.moqas.MyTVProject"
     },
-    "ios": {
-      "splash": {
-        "image": "./src/src/assets/images/splash.png"
-      },
-      "bundleIdentifier": "com.moqas.MyTVProject"
-    },
     "web": {
       "bundler": "metro",
-      "favicon": "./src/src/assets/images/favicon.png",
+      "favicon": "./src/assets/images/favicon.png",
       "output": "static"
     },
     "experiments": {
